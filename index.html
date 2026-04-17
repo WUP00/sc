@@ -1,0 +1,1126 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>北海道旅遊攻略 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@300;400;600;700&family=Noto+Sans+TC:wght@300;400;500;600&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --cream: #f5f0e8;
+  --warm-white: #faf8f4;
+  --charcoal: #3a3530;
+  --medium: #6b6059;
+  --light: #9c9089;
+  --border: #d8d0c4;
+  --col-transport: #7a8fa0;
+  --col-transport-bg: #edf1f5;
+  --col-food: #9a7c6e;
+  --col-food-bg: #f5ede9;
+  --col-sight: #7a9080;
+  --col-sight-bg: #ecf2ee;
+  --col-shop: #9a8a6e;
+  --col-shop-bg: #f5f0e6;
+  --col-hotel: #7a7a9a;
+  --col-hotel-bg: #eeeef5;
+  --col-note: #8a7a6a;
+  --col-note-bg: #f2ece6;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+
+body {
+  font-family: 'Noto Sans TC', sans-serif;
+  background: #e8e4dc;
+  color: var(--charcoal);
+  font-size: 15px;
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+a { text-decoration: none; color: inherit; }
+
+/* ── TOP NAV ── */
+.top-nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--charcoal);
+  padding: 0 4px;
+  display: flex;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+.top-nav::-webkit-scrollbar { display: none; }
+.nav-btn {
+  flex-shrink: 0;
+  padding: 12px 14px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--light);
+  cursor: pointer;
+  letter-spacing: 0.06em;
+  white-space: nowrap;
+  border-bottom: 2px solid transparent;
+  transition: color 0.2s, border-color 0.2s;
+  background: none;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+}
+.nav-btn.active {
+  color: var(--cream);
+  border-bottom-color: var(--cream);
+}
+
+/* ── PAGES ── */
+.page { display: none; }
+.page.active { display: block; }
+
+/* ── COVER ── */
+.cover {
+  background: var(--charcoal);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+.cover-hero {
+  background: var(--charcoal);
+  padding: 48px 24px 36px;
+  flex: 1;
+}
+.cover-accent {
+  width: 32px; height: 3px;
+  background: var(--light);
+  margin-bottom: 20px;
+}
+.cover-title-jp {
+  font-family: 'Playfair Display', 'Noto Serif TC', serif;
+  font-size: 52px;
+  font-weight: 700;
+  color: var(--cream);
+  line-height: 1.1;
+  margin-bottom: 6px;
+}
+.cover-title-zh {
+  font-family: 'Noto Serif TC', serif;
+  font-size: 22px;
+  font-weight: 300;
+  color: var(--light);
+  letter-spacing: 0.15em;
+  margin-bottom: 28px;
+}
+.cover-dates {
+  border-top: 1px solid #5a5248;
+  padding-top: 20px;
+  font-size: 13px;
+  color: var(--light);
+  letter-spacing: 0.06em;
+  line-height: 1.8;
+}
+.cover-dates strong {
+  display: block;
+  color: var(--cream);
+  font-size: 16px;
+  margin-bottom: 6px;
+}
+.cover-sub {
+  margin-top: 20px;
+  font-size: 12px;
+  color: #6b6560;
+  line-height: 1.8;
+}
+
+/* ── OVERVIEW BOX ── */
+.overview-section {
+  background: var(--warm-white);
+  padding: 24px 20px;
+}
+.section-head {
+  font-family: 'Playfair Display', serif;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--light);
+  margin-bottom: 14px;
+}
+.overview-box {
+  background: var(--charcoal);
+  color: var(--cream);
+  border-radius: 8px;
+  padding: 18px 16px;
+  margin-bottom: 20px;
+}
+.overview-row {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+  font-size: 13px;
+  line-height: 1.5;
+}
+.overview-row:last-child { margin-bottom: 0; }
+.overview-day {
+  min-width: 22px;
+  font-weight: 700;
+  color: var(--light);
+  font-size: 12px;
+  padding-top: 1px;
+}
+
+/* ── HOTEL CARDS ── */
+.hotel-card {
+  background: var(--col-hotel-bg);
+  border: 1px solid #c4c4d8;
+  border-radius: 8px;
+  padding: 14px 16px;
+  margin-bottom: 10px;
+}
+.hotel-card .hb-name {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--col-hotel);
+  margin-bottom: 4px;
+}
+.hotel-card .hb-addr {
+  font-size: 12px;
+  color: var(--medium);
+  line-height: 1.5;
+}
+.map-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  margin-top: 6px;
+  font-size: 11px;
+  font-weight: 600;
+  color: #4285f4;
+  background: rgba(66,133,244,0.08);
+  padding: 3px 8px;
+  border-radius: 20px;
+  text-decoration: none;
+}
+.map-link::before {
+  content: '📍';
+  font-size: 11px;
+}
+
+/* ── LEGEND ── */
+.legend-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 8px;
+}
+
+/* ── TOC ── */
+.toc-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-top: 14px;
+}
+.toc-card {
+  background: var(--warm-white);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 14px 12px;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+.toc-card:active { background: var(--cream); }
+.toc-day-num {
+  font-family: 'Playfair Display', serif;
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--light);
+  line-height: 1;
+  margin-bottom: 4px;
+}
+.toc-date {
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--medium);
+  letter-spacing: 0.06em;
+  display: block;
+  margin-bottom: 2px;
+}
+.toc-desc {
+  font-size: 13px;
+  color: var(--charcoal);
+  font-weight: 500;
+  line-height: 1.3;
+}
+
+/* ── DAY PAGE ── */
+.day-header {
+  background: var(--charcoal);
+  padding: 20px 20px 16px;
+  color: var(--cream);
+}
+.day-header-label {
+  font-size: 10px;
+  color: var(--light);
+  letter-spacing: 0.1em;
+  margin-bottom: 4px;
+}
+.day-header-num {
+  font-family: 'Playfair Display', serif;
+  font-size: 40px;
+  font-weight: 700;
+  color: #5a5248;
+  line-height: 1;
+  display: inline;
+  margin-right: 8px;
+}
+.day-header-title {
+  font-family: 'Noto Serif TC', serif;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--cream);
+  display: inline;
+}
+.day-date-badge {
+  display: inline-block;
+  background: rgba(255,255,255,0.1);
+  color: var(--light);
+  font-size: 11px;
+  padding: 3px 10px;
+  border-radius: 20px;
+  margin-top: 8px;
+  letter-spacing: 0.06em;
+}
+
+.day-content {
+  padding: 16px 16px 40px;
+}
+
+/* ── SECTION LABEL ── */
+.section-label {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--light);
+  margin: 20px 0 10px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.section-label::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+}
+
+/* ── ITEM BLOCK ── */
+.item {
+  margin-bottom: 14px;
+  padding: 12px 14px;
+  border-left: 3px solid var(--border);
+  background: var(--warm-white);
+  border-radius: 0 8px 8px 0;
+  position: relative;
+}
+.item.transport { border-left-color: var(--col-transport); }
+.item.food      { border-left-color: var(--col-food); }
+.item.sight     { border-left-color: var(--col-sight); }
+.item.shop      { border-left-color: var(--col-shop); }
+.item.hotel     { border-left-color: var(--col-hotel); }
+.item.note-item { border-left-color: var(--col-note); }
+
+.item-time {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--light);
+  letter-spacing: 0.05em;
+  display: block;
+  margin-bottom: 2px;
+}
+.item-title {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--charcoal);
+  margin-bottom: 4px;
+  line-height: 1.4;
+}
+.item-desc {
+  font-size: 13px;
+  color: var(--medium);
+  line-height: 1.6;
+}
+
+/* ── TAGS ── */
+.tag {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 600;
+  padding: 2px 7px;
+  border-radius: 4px;
+  margin-right: 3px;
+  margin-bottom: 3px;
+  letter-spacing: 0.04em;
+  vertical-align: middle;
+}
+.tag-transport { background: var(--col-transport-bg); color: var(--col-transport); }
+.tag-food      { background: var(--col-food-bg);      color: var(--col-food); }
+.tag-sight     { background: var(--col-sight-bg);     color: var(--col-sight); }
+.tag-shop      { background: var(--col-shop-bg);      color: var(--col-shop); }
+.tag-hotel     { background: var(--col-hotel-bg);     color: var(--col-hotel); }
+.tag-note      { background: var(--col-note-bg);      color: var(--col-note); }
+
+/* ── SUB-ITEMS ── */
+.sub-item {
+  font-size: 13px;
+  color: var(--medium);
+  padding: 3px 0 3px 10px;
+  border-left: 2px solid var(--col-food-bg);
+  margin-bottom: 4px;
+  line-height: 1.4;
+}
+.sub-item::before { content: '・'; color: var(--col-food); }
+
+/* ── RESERVATION BOX ── */
+.reservation-box {
+  background: var(--col-note-bg);
+  border: 1px solid #c8b8a8;
+  border-radius: 6px;
+  padding: 10px 12px;
+  margin: 6px 0;
+  font-size: 13px;
+  color: var(--medium);
+  line-height: 1.7;
+}
+.reservation-box .rb-title {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--col-note);
+  margin-bottom: 4px;
+}
+
+/* ── DIVIDER ── */
+.divider {
+  width: 100%;
+  height: 1px;
+  background: var(--border);
+  margin: 14px 0;
+}
+
+/* ── HIGHLIGHT BOX ── */
+.highlight-box {
+  text-align: center;
+  padding: 20px 16px;
+  background: var(--cream);
+  border-radius: 8px;
+  margin: 14px 0;
+}
+.highlight-jp {
+  font-family: 'Playfair Display', serif;
+  font-size: 26px;
+  color: var(--light);
+  line-height: 1.2;
+}
+.highlight-sub {
+  font-size: 11px;
+  color: var(--medium);
+  margin-top: 6px;
+  letter-spacing: 0.1em;
+}
+
+/* ── CREAM ITEM ── */
+.item-cream { background: var(--cream); }
+
+/* ── PAGE FOOTER ── */
+.page-footer-bar {
+  background: var(--charcoal);
+  padding: 10px 16px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 10px;
+  color: var(--light);
+  letter-spacing: 0.05em;
+  margin-top: 8px;
+}
+
+/* ── NOTE COLOR ── */
+.note-color { color: var(--col-note); font-size: 12px; }
+.sight-accent { color: var(--col-sight); font-weight: 600; font-size: 12px; }
+</style>
+</head>
+<body>
+
+<!-- TOP NAV -->
+<nav class="top-nav" id="mainNav">
+  <button class="nav-btn active" onclick="showPage('cover', this)">封面</button>
+  <button class="nav-btn" onclick="showPage('day1', this)">D1 · 4/24</button>
+  <button class="nav-btn" onclick="showPage('day2', this)">D2 · 4/25</button>
+  <button class="nav-btn" onclick="showPage('day3', this)">D3 · 4/26</button>
+  <button class="nav-btn" onclick="showPage('day4', this)">D4 · 4/27</button>
+  <button class="nav-btn" onclick="showPage('day5', this)">D5 · 4/28</button>
+  <button class="nav-btn" onclick="showPage('day6', this)">D6 · 4/29</button>
+</nav>
+
+<!-- ===== COVER PAGE ===== -->
+<div class="page active" id="page-cover">
+  <div class="cover">
+    <div class="cover-hero">
+      <div class="cover-accent"></div>
+      <div class="cover-title-jp">北海道</div>
+      <div class="cover-title-zh">旅遊攻略</div>
+      <div class="cover-dates">
+        <strong>2026 · APR 24 – APR 29</strong>
+        桃園 → 新千歲 → 札幌 → 函館 → 桃園<br>
+        6 天 5 夜 · 3 人同行
+      </div>
+      <div class="cover-sub">
+        包含行程 · 交通 · 餐飲 · 購物<br>及住宿資訊完整版
+      </div>
+    </div>
+
+    <div class="overview-section">
+      <div class="section-head">Day by Day Overview</div>
+      <div class="overview-box">
+        <div class="overview-row"><div class="overview-day">D1</div><div>4/24 桃園出發，抵新千歲機場，移動至札幌，狸小路、薄野逛街</div></div>
+        <div class="overview-row"><div class="overview-day">D2</div><div>4/25 小樽一日遊：水族館→運河→LeTAO，傍晚吃印度咖哩返回</div></div>
+        <div class="overview-row"><div class="overview-day">D3</div><div>4/26 圓山公園→北海道神宮，午餐根室水產，下午地下街採購</div></div>
+        <div class="overview-row"><div class="overview-day">D4</div><div>4/27 Check out，狸小路購物，北斗特急移動函館</div></div>
+        <div class="overview-row"><div class="overview-day">D5</div><div>4/28 函館元町→金森紅磚倉庫→五稜郭賞夜櫻</div></div>
+        <div class="overview-row"><div class="overview-day">D6</div><div>4/29 函館機場出發，午後抵桃園</div></div>
+      </div>
+
+      <div class="section-head">住宿資訊</div>
+      <div class="hotel-card">
+        <div class="hb-name"><span class="tag tag-hotel">🏨 住宿</span> ベッセルイン札幌中島公園</div>
+        <div class="hb-addr">北海道札幌市中央区南九条西四丁目1番2号<br>入住：4/24 ｜ 退房：4/27</div>
+        <a class="map-link" href="https://www.google.com/maps/search/ベッセルイン札幌中島公園" target="_blank">在 Google Maps 搜尋</a>
+      </div>
+      <div class="hotel-card">
+        <div class="hb-name"><span class="tag tag-hotel">🏨 住宿</span> JR INN 函館</div>
+        <div class="hb-addr">北海道函館市若松町12番14号<br>入住：4/27 ｜ 退房：4/29</div>
+        <a class="map-link" href="https://www.google.com/maps/search/JR+INN+函館+若松町" target="_blank">在 Google Maps 搜尋</a>
+      </div>
+
+      <div class="section-head" style="margin-top:20px;">目錄</div>
+      <div class="toc-grid">
+        <div class="toc-card" onclick="showPage('day1', document.querySelectorAll('.nav-btn')[1])">
+          <div class="toc-day-num">D1</div>
+          <span class="toc-date">4/24 FRI</span>
+          <div class="toc-desc">桃園出發 → 札幌</div>
+        </div>
+        <div class="toc-card" onclick="showPage('day2', document.querySelectorAll('.nav-btn')[2])">
+          <div class="toc-day-num">D2</div>
+          <span class="toc-date">4/25 SAT</span>
+          <div class="toc-desc">小樽一日遊</div>
+        </div>
+        <div class="toc-card" onclick="showPage('day3', document.querySelectorAll('.nav-btn')[3])">
+          <div class="toc-day-num">D3</div>
+          <span class="toc-date">4/26 SUN</span>
+          <div class="toc-desc">北海道神宮 · 札幌市區</div>
+        </div>
+        <div class="toc-card" onclick="showPage('day4', document.querySelectorAll('.nav-btn')[4])">
+          <div class="toc-day-num">D4</div>
+          <span class="toc-date">4/27 MON</span>
+          <div class="toc-desc">札幌 → 函館</div>
+        </div>
+        <div class="toc-card" onclick="showPage('day5', document.querySelectorAll('.nav-btn')[5])">
+          <div class="toc-day-num">D5</div>
+          <span class="toc-date">4/28 TUE</span>
+          <div class="toc-desc">函館市區 · 五稜郭賞櫻</div>
+        </div>
+        <div class="toc-card" onclick="showPage('day6', document.querySelectorAll('.nav-btn')[6])">
+          <div class="toc-day-num">D6</div>
+          <span class="toc-date">4/29 WED</span>
+          <div class="toc-desc">函館 → 桃園回家</div>
+        </div>
+      </div>
+
+      <div class="section-head" style="margin-top:20px;">類型標籤說明</div>
+      <div class="legend-row">
+        <span class="tag tag-transport">✈ 交通</span>
+        <span class="tag tag-food">🍴 餐飲</span>
+        <span class="tag tag-sight">⛩ 景點</span>
+        <span class="tag tag-shop">🛍 購物</span>
+        <span class="tag tag-hotel">🏨 住宿</span>
+        <span class="tag tag-note">📌 注意</span>
+      </div>
+    </div>
+  </div>
+  <div class="page-footer-bar">
+    <span>北海道旅遊攻略 2026</span>
+    <span>封面 · 目錄</span>
+  </div>
+</div>
+
+<!-- ===== DAY 1 (4/24) ===== -->
+<div class="page" id="page-day1">
+  <div class="day-header">
+    <div class="day-header-label">DAY ONE · 4/24 FRI</div>
+    <div><span class="day-header-num">01</span><span class="day-header-title">桃園出發 → 札幌</span></div>
+    <div class="day-date-badge">2026.04.24</div>
+  </div>
+  <div class="day-content">
+
+    <div class="item transport">
+      <span class="item-time">02:50 – 07:35</span>
+      <div class="item-title"><span class="tag tag-transport">✈ 交通</span> VZ570 TPE → CTS</div>
+      <div class="item-desc">桃園國際機場 → 新千歲機場<br>威茲航空，飛行時間約 3.5 小時</div>
+    </div>
+
+    <div class="item food">
+      <span class="item-time">08:00 – 09:00</span>
+      <div class="item-title"><span class="tag tag-food">🍴 餐飲</span> 新千歲機場 2F 爆吃爆買</div>
+      <div class="item-desc">機場必買清單：</div>
+      <div class="sub-item">かま栄（魚板）</div>
+      <div class="sub-item">アソンブロッソ！（好吃炸薯條）</div>
+      <div class="sub-item">札幌農学校（餅乾）</div>
+      <div class="sub-item">北海道牛乳カステラ（蛋糕）</div>
+      <a class="map-link" href="https://www.google.com/maps/search/新千歲機場+北海道" target="_blank">在 Google Maps 搜尋</a>
+    </div>
+
+    <div class="item transport">
+      <span class="item-time">10:00~</span>
+      <div class="item-title"><span class="tag tag-transport">✈ 交通</span> 機場巴士前往札幌</div>
+      <div class="item-desc">新千歲 → 札幌市區，放行李至 ベッセルイン 札幌中島公園</div>
+    </div>
+
+    <div class="item food">
+      <span class="item-time">12:00</span>
+      <div class="item-title"><span class="tag tag-food">🍴 餐飲</span> 午餐：Yakiniku Bar Tamura</div>
+      <div class="item-desc">Walk-in 方式，若無位置則附近隨便找<br>
+      <span class="tag tag-transport">✈ 交通</span> 南北線 中島公園 → 札幌，約 5 分鐘，3 站</div>
+      <a class="map-link" href="https://www.google.com/maps/search/Yakiniku+Bar+Tamura+札幌" target="_blank">在 Google Maps 搜尋</a>
+    </div>
+
+    <div class="item sight">
+      <span class="item-time">13:00</span>
+      <div class="item-title"><span class="tag tag-sight">⛩ 景點</span> 札幌諏訪神社</div>
+      <div class="item-desc">東豐線 / 南北線 皆可抵達</div>
+      <a class="map-link" href="https://www.google.com/maps/search/札幌諏訪神社" target="_blank">在 Google Maps 搜尋</a>
+    </div>
+
+    <div class="item shop">
+      <span class="item-time">15:00</span>
+      <div class="item-title"><span class="tag tag-shop">🛍 購物</span> Stellar Place Center</div>
+      <div class="item-desc">步行約 18 分鐘或搭地鐵<br>東豐線 / 南北線 皆可抵達</div>
+      <a class="map-link" href="https://www.google.com/maps/search/Stellar+Place+Center+札幌" target="_blank">在 Google Maps 搜尋</a>
+    </div>
+
+    <div class="item food">
+      <span class="item-time">18:00</span>
+      <div class="item-title"><span class="tag tag-food">🍴 餐飲</span> 晚餐選擇（Stellar Place 內）</div>
+      <div class="item-desc">
+        <span class="tag tag-food">A</span> 十勝豚丼<br>
+        <span class="tag tag-food">B</span> 回転寿司 根室花まる<br>
+        <span class="tag tag-food">C</span> ポムの樹（蛋包飯）<br>
+        <span class="tag tag-food">D</span> 鳥貴族（串燒居酒屋）
+      </div>
+    </div>
+
+    <div class="section-label">當日重點提示</div>
+
+    <div class="item note-item">
+      <span class="item-time">行程節奏</span>
+      <div class="item-title"><span class="tag tag-note">📌 注意</span> 深夜出發注意事項</div>
+      <div class="item-desc">凌晨 02:50 班機，請提前抵達機場辦理登機。抵達新千歲為當地時間 07:35（日本時間＋1小時）。</div>
+    </div>
+
+    <div class="item sight">
+      <span class="item-time">地區資訊</span>
+      <div class="item-title"><span class="tag tag-sight">⛩ 景點</span> 狸小路 · 薄野</div>
+      <div class="item-desc">晚餐後可步行前往狸小路商店街及薄野娛樂區逛逛，體驗札幌夜生活。</div>
+      <a class="map-link" href="https://www.google.com/maps/search/狸小路商店街+札幌" target="_blank">在 Google Maps 搜尋</a>
+    </div>
+
+    <div class="item hotel">
+      <span class="item-time">今晚住宿</span>
+      <div class="item-title"><span class="tag tag-hotel">🏨 住宿</span> ベッセルイン札幌中島公園</div>
+      <div class="item-desc">北海道札幌市中央区南九条西四丁目1番2号</div>
+      <a class="map-link" href="https://www.google.com/maps/search/ベッセルイン札幌中島公園" target="_blank">在 Google Maps 搜尋</a>
+    </div>
+  </div>
+  <div class="page-footer-bar">
+    <span>北海道旅遊攻略 2026</span>
+    <span>DAY 1 · 2026.04.24</span>
+  </div>
+</div>
+
+<!-- ===== DAY 2 (4/25) ===== -->
+<div class="page" id="page-day2">
+  <div class="day-header">
+    <div class="day-header-label">DAY TWO · 4/25 SAT</div>
+    <div><span class="day-header-num">02</span><span class="day-header-title">小樽一日遊</span></div>
+    <div class="day-date-badge">2026.04.25</div>
+  </div>
+  <div class="day-content">
+
+    <div class="item food">
+      <span class="item-time">07:00</span>
+      <div class="item-title"><span class="tag tag-food">🍴 餐飲</span> 飯店早餐</div>
+      <div class="item-desc">ベッセルイン 札幌中島公園</div>
+    </div>
+
+    <div class="item transport">
+      <span class="item-time">08:00</span>
+      <div class="item-title"><span class="tag tag-transport">✈ 交通</span> 通勤往小樽</div>
+      <div class="item-desc">JR 小樽站 → 小樽水族館巴士約 40 分鐘</div>
+    </div>
+
+    <div class="item sight">
+      <span class="item-time">10:00</span>
+      <div class="item-title"><span class="tag tag-sight">⛩ 景點</span> 小樽水族館</div>
+      <div class="item-desc">北海道最具代表性的水族館之一，海豹秀、企鵝散步等特色展演</div>
+      <a class="map-link" href="https://www.google.com/maps/search/小樽水族館+北海道" target="_blank">在 Google Maps 搜尋</a>
+    </div>
+
+    <div class="item food">
+      <span class="item-time">12:00</span>
+      <div class="item-title"><span class="tag tag-food">🍴 餐飲</span> 午餐安排</div>
+      <div class="item-desc">水族館附近午餐，或有提早結束，可前往市區吃牛排飯</div>
+    </div>
+
+    <div class="item sight">
+      <span class="item-time">13:00 – 17:00</span>
+      <div class="item-title"><span class="tag tag-sight">⛩ 景點</span> 小樽運河沿岸散步</div>
+      <div class="item-desc">從小樽站沿運河漫步，欣賞歐式倉庫建築群</div>
+      <a class="map-link" href="https://www.google.com/maps/search/小樽運河" target="_blank">在 Google Maps 搜尋</a>
+    </div>
+
+    <div class="item shop">
+      <span class="item-time">13:00 – 17:00</span>
+      <div class="item-title"><span class="tag tag-shop">🛍 購物</span> LeTAO 總店</div>
+      <div class="item-desc">往下坡方向前進，至入船十字街附近<br>北海道名產起司蛋糕 Double Fromage</div>
+      <a class="map-link" href="https://www.google.com/maps/search/LeTAO+小樽+総本店" target="_blank">在 Google Maps 搜尋</a>
+    </div>
+
+    <div class="item food">
+      <span class="item-time">17:00</span>
+      <div class="item-title"><span class="tag tag-food">🍴 餐飲</span> 晚餐：咖哩</div>
+      <div class="item-desc">
+        Century Soup Curry<br>
+        &amp; Indian Nepalese Curry<br>
+        <span style="color:var(--col-food); font-weight:600;">日本必吃印度咖哩！</span>
+      </div>
+      <a class="map-link" href="https://www.google.com/maps/search/Century+Soup+Curry+札幌" target="_blank">在 Google Maps 搜尋</a>
+    </div>
+
+    <div class="item transport">
+      <span class="item-time">18:00~</span>
+      <div class="item-title"><span class="tag tag-transport">✈ 交通</span> 返回札幌</div>
+      <div class="item-desc">依玩到幾點，循原路搭 JR 返回札幌住宿</div>
+    </div>
+
+    <div class="section-label">小樽地區資訊</div>
+
+    <div class="item note-item">
+      <span class="item-time">路線建議</span>
+      <div class="item-title"><span class="tag tag-note">📌 注意</span> 小樽運河散步路線</div>
+      <div class="item-desc">建議從小樽站出發，沿運河往出抜小路方向，順道拜訪手宮線遺跡後，往市場方向繞回，最後到入船十字街的 LeTAO 總店。</div>
+    </div>
+
+    <div class="item sight">
+      <span class="item-time">補充景點</span>
+      <div class="item-title"><span class="tag tag-sight">⛩ 景點</span> 小樽運河邊特色</div>
+      <div class="item-desc">玻璃工藝品店、音樂盒堂（オルゴール堂）皆在運河步行距離內，可順路參觀</div>
+      <a class="map-link" href="https://www.google.com/maps/search/小樽オルゴール堂" target="_blank">在 Google Maps 搜尋</a>
+    </div>
+
+    <div class="item hotel">
+      <span class="item-time">今晚住宿</span>
+      <div class="item-title"><span class="tag tag-hotel">🏨 住宿</span> ベッセルイン札幌中島公園</div>
+      <div class="item-desc">北海道札幌市中央区南九条西四丁目1番2号</div>
+      <a class="map-link" href="https://www.google.com/maps/search/ベッセルイン札幌中島公園" target="_blank">在 Google Maps 搜尋</a>
+    </div>
+  </div>
+  <div class="page-footer-bar">
+    <span>北海道旅遊攻略 2026</span>
+    <span>DAY 2 · 2026.04.25</span>
+  </div>
+</div>
+
+<!-- ===== DAY 3 (4/26) ===== -->
+<div class="page" id="page-day3">
+  <div class="day-header">
+    <div class="day-header-label">DAY THREE · 4/26 SUN</div>
+    <div><span class="day-header-num">03</span><span class="day-header-title">北海道神宮 · 札幌市區採購</span></div>
+    <div class="day-date-badge">2026.04.26</div>
+  </div>
+  <div class="day-content">
+
+    <div class="item transport">
+      <span class="item-time">09:00</span>
+      <div class="item-title"><span class="tag tag-transport">✈ 交通</span> 出發往圓山公園</div>
+      <div class="item-desc">中島公園 → 大通 → 圓山公園（地鐵換乘）</div>
+    </div>
+
+    <div class="item sight">
+      <span class="item-time">09:00~</span>
+      <div class="item-title"><span class="tag tag-sight">⛩ 景點</span> 圓山公園漫步</div>
+      <div class="item-desc">春季賞花勝地，步行前往北海道神宮</div>
+      <a class="map-link" href="https://www.google.com/maps/search/円山公園+札幌" target="_blank">在 Google Maps 搜尋</a>
+    </div>
+
+    <div class="item sight">
+      <span class="item-time">09:30~</span>
+      <div class="item-title"><span class="tag tag-sight">⛩ 景點</span> 北海道神宮</div>
+      <div class="item-desc">北海道最重要的神社，供奉開拓三神及明治天皇，春季境內有染井吉野櫻</div>
+      <a class="map-link" href="https://www.google.com/maps/search/北海道神宮+札幌" target="_blank">在 Google Maps 搜尋</a>
+    </div>
+
+    <div class="item food">
+      <span class="item-time">12:00</span>
+      <div class="item-title"><span class="tag tag-food">🍴 餐飲</span> 午餐：根室水產 UME 堂</div>
+      <div class="item-desc">
+        <span class="tag tag-transport">✈ 交通</span> 二十四軒站 → 大通站<br>
+        北海道新鮮海產，CP 值極高
+      </div>
+      <a class="map-link" href="https://www.google.com/maps/search/根室水産+UME堂+札幌" target="_blank">在 Google Maps 搜尋</a>
+    </div>
+
+    <div class="item shop">
+      <span class="item-time">13:00~</span>
+      <div class="item-title"><span class="tag tag-shop">🛍 購物</span> 地下街採購路線</div>
+      <div class="item-desc">
+        札幌地下街 → 薄野 → 大丸 &amp; PARCO → APIA<br>
+        一路步行逛到狸小路
+      </div>
+      <a class="map-link" href="https://www.google.com/maps/search/札幌地下街" target="_blank">在 Google Maps 搜尋</a>
+    </div>
+
+    <div class="item food">
+      <span class="item-time">13:00~</span>
+      <div class="item-title"><span class="tag tag-food">🍴 餐飲</span> 甜點補給</div>
+      <div class="item-desc">
+        <div class="sub-item">ポムダムールトーキョー 札幌すすきの店（蘋果甜點）</div>
+        <div class="sub-item">ESPRESSO D WORKS（咖啡）</div>
+        <div class="sub-item">ココノススキノ 商場</div>
+      </div>
+    </div>
+
+    <div class="item food">
+      <span class="item-time">18:00</span>
+      <div class="item-title"><span class="tag tag-food">🍴 餐飲</span> 晚餐：とんかつ恭平</div>
+      <div class="item-desc">北海道名店炸豬排，皮薄酥脆、肉質飽滿，建議稍早前往避免等候</div>
+      <a class="map-link" href="https://www.google.com/maps/search/とんかつ恭平+札幌" target="_blank">在 Google Maps 搜尋</a>
+    </div>
+
+    <div class="item food">
+      <span class="item-time">19:00~</span>
+      <div class="item-title"><span class="tag tag-food">🍴 餐飲</span> 夜聖代（選擇性）</div>
+      <div class="item-desc">晚上若有機會可尋找夜聖代（夜パフェ）——札幌獨特文化！</div>
+    </div>
+
+    <div class="section-label">當日重點提示</div>
+
+    <div class="item note-item">
+      <span class="item-time">夜聖代文化</span>
+      <div class="item-title"><span class="tag tag-note">📌 注意</span> 札幌「夜パフェ」</div>
+      <div class="item-desc">札幌獨有飲食文化，晚餐後以聖代作為收尾甜點。薄野一帶有多家夜パフェ專門店，約 21:00 後人潮較少。</div>
+      <a class="map-link" href="https://www.google.com/maps/search/夜パフェ+すすきの+札幌" target="_blank">在 Google Maps 搜尋</a>
+    </div>
+
+    <div class="item shop">
+      <span class="item-time">購物重點</span>
+      <div class="item-title"><span class="tag tag-shop">🛍 購物</span> 狸小路商店街</div>
+      <div class="item-desc">全長 7 個街區的拱廊商店街，藥妝、北海道名產、服飾一次購齊。建議留 2 小時以上逛街。</div>
+      <a class="map-link" href="https://www.google.com/maps/search/狸小路商店街+札幌" target="_blank">在 Google Maps 搜尋</a>
+    </div>
+
+    <div class="item hotel">
+      <span class="item-time">今晚住宿</span>
+      <div class="item-title"><span class="tag tag-hotel">🏨 住宿</span> ベッセルイン札幌中島公園</div>
+      <div class="item-desc">北海道札幌市中央区南九条西四丁目1番2号<br><strong>明日 4/27 需 Check-out！</strong></div>
+      <a class="map-link" href="https://www.google.com/maps/search/ベッセルイン札幌中島公園" target="_blank">在 Google Maps 搜尋</a>
+    </div>
+  </div>
+  <div class="page-footer-bar">
+    <span>北海道旅遊攻略 2026</span>
+    <span>DAY 3 · 2026.04.26</span>
+  </div>
+</div>
+
+<!-- ===== DAY 4 (4/27) ===== -->
+<div class="page" id="page-day4">
+  <div class="day-header">
+    <div class="day-header-label">DAY FOUR · 4/27 MON</div>
+    <div><span class="day-header-num">04</span><span class="day-header-title">札幌 → 函館移動日</span></div>
+    <div class="day-date-badge">2026.04.27</div>
+  </div>
+  <div class="day-content">
+
+    <div class="item hotel">
+      <span class="item-time">09:00</span>
+      <div class="item-title"><span class="tag tag-hotel">🏨 住宿</span> Check-out 放行李</div>
+      <div class="item-desc">退房 ベッセルイン 札幌中島公園<br>叫計程車約 7 分鐘前往 JR 札幌站西口寄放行李</div>
+      <a class="map-link" href="https://www.google.com/maps/search/JR札幌駅+西口" target="_blank">在 Google Maps 搜尋</a>
+    </div>
+
+    <div class="item shop">
+      <span class="item-time">10:00</span>
+      <div class="item-title"><span class="tag tag-shop">🛍 購物</span> 狸小路最後採購</div>
+      <div class="item-desc">搭車前最後機會在狸小路進行採購，把握時間！</div>
+      <a class="map-link" href="https://www.google.com/maps/search/狸小路商店街+札幌" target="_blank">在 Google Maps 搜尋</a>
+    </div>
+
+    <div class="item food">
+      <span class="item-time">11:00</span>
+      <div class="item-title"><span class="tag tag-food">🍴 餐飲</span> 午餐：氷雪の門</div>
+      <div class="item-desc">預約資訊：</div>
+      <div class="reservation-box">
+        <div class="rb-title">📋 預約確認</div>
+        Reservation #76232<br>
+        Check-in: 11:00 AM<br>
+        Check-out: 01:15 PM<br>
+        Party size: 3 人
+      </div>
+      <a class="map-link" href="https://www.google.com/maps/search/氷雪の門+札幌" target="_blank">在 Google Maps 搜尋</a>
+    </div>
+
+    <div class="item transport">
+      <span class="item-time">14:46 – 18:30</span>
+      <div class="item-title"><span class="tag tag-transport">✈ 交通</span> 北斗特急：札幌 → 函館</div>
+      <div class="item-desc">
+        列車名稱：Hokuto 16<br>
+        SAPPORO (14:46) → HAKODATE (18:30)<br>
+        行車時間約 3 小時 44 分<br>
+        <br>
+        <strong>座位：</strong><br>
+        3號車 12番C席<br>
+        3號車 12番D席<br>
+        3號車 13番D席<br>
+        <br>
+        抵達函館後步行至 JR INN 函館
+      </div>
+    </div>
+
+    <div class="item hotel">
+      <span class="item-time">18:30~</span>
+      <div class="item-title"><span class="tag tag-hotel">🏨 住宿</span> Check-in JR INN 函館</div>
+      <div class="item-desc">北海道函館市若松町12番14号<br>（JR 函館站步行可達）</div>
+      <a class="map-link" href="https://www.google.com/maps/search/JR+INN+函館+若松町" target="_blank">在 Google Maps 搜尋</a>
+    </div>
+
+    <div class="item food">
+      <span class="item-time">19:00</span>
+      <div class="item-title"><span class="tag tag-food">🍴 餐飲</span> 晚餐選擇</div>
+      <div class="item-desc">
+        <span class="tag tag-food">A</span> Lucky Pierrot（小丑漢堡）函館在地名店<br>
+        <span class="tag tag-food">B</span> 根室花丸<br>
+        <span class="note-color">⚠ 若在札幌沒吃到根室的話可以吃</span>
+      </div>
+      <a class="map-link" href="https://www.google.com/maps/search/Lucky+Pierrot+函館" target="_blank">Lucky Pierrot Google Maps</a>
+    </div>
+
+    <div class="item note-item">
+      <span class="item-time">補充提示</span>
+      <div class="item-title"><span class="tag tag-note">📌 注意</span> 長谷川商店 函館站前店（串烤店）19:00 關門</div>
+      <div class="item-desc">若沒有太多人也可以買幾串吃看看，比較各串口味</div>
+      <a class="map-link" href="https://www.google.com/maps/search/長谷川商店+函館駅前" target="_blank">在 Google Maps 搜尋</a>
+    </div>
+
+    <div class="section-label">函館到達提示</div>
+
+    <div class="item note-item">
+      <span class="item-time">Lucky Pierrot</span>
+      <div class="item-title"><span class="tag tag-note">📌 注意</span> 函館必吃小丑漢堡</div>
+      <div class="item-desc">Lucky Pierrot 是函館獨有的在地速食漢堡連鎖，僅在函館市內有分店，個性十足的裝潢和特色漢堡是函館必訪。建議點招牌「チャイニーズチキンバーガー（中華雞肉堡）」。</div>
+      <a class="map-link" href="https://www.google.com/maps/search/Lucky+Pierrot+函館" target="_blank">在 Google Maps 搜尋</a>
+    </div>
+  </div>
+  <div class="page-footer-bar">
+    <span>北海道旅遊攻略 2026</span>
+    <span>DAY 4 · 2026.04.27</span>
+  </div>
+</div>
+
+<!-- ===== DAY 5 (4/28) ===== -->
+<div class="page" id="page-day5">
+  <div class="day-header">
+    <div class="day-header-label">DAY FIVE · 4/28 TUE</div>
+    <div><span class="day-header-num">05</span><span class="day-header-title">函館市區 + 五稜郭賞櫻</span></div>
+    <div class="day-date-badge">2026.04.28</div>
+  </div>
+  <div class="day-content">
+
+    <div class="item food">
+      <span class="item-time">10:00</span>
+      <div class="item-title"><span class="tag tag-food">🍴 餐飲</span> 世界第 2 好吃的烤菠蘿麵包</div>
+      <div class="item-desc">
+        函館元町店<br>
+        <span class="note-color">⚠ 約 10:00 開門，注意等候排隊</span>
+      </div>
+      <a class="map-link" href="https://www.google.com/maps/search/世界第二好吃的炙り生メロンパン+函館元町" target="_blank">在 Google Maps 搜尋</a>
+    </div>
+
+    <div class="item sight">
+      <span class="item-time">11:00</span>
+      <div class="item-title"><span class="tag tag-sight">⛩ 景點</span> 金森紅磚倉庫</div>
+      <div class="item-desc">函館港邊的明治時代紅磚倉庫群，現為購物・餐飲・文化空間</div>
+      <a class="map-link" href="https://www.google.com/maps/search/金森赤レンガ倉庫+函館" target="_blank">在 Google Maps 搜尋</a>
+    </div>
+
+    <div class="item shop">
+      <span class="item-time">11:00~</span>
+      <div class="item-title"><span class="tag tag-shop">🛍 購物</span> 金森紅磚倉庫周邊甜點</div>
+      <div class="item-desc">
+        <div class="sub-item">Petite Merveille 起司蛋糕 — BAY 函館店</div>
+        <div class="sub-item">Pastry Snaffle's 起司蛋糕</div>
+        <div class="sub-item">金森洋物館（雜貨購物）</div>
+      </div>
+      <a class="map-link" href="https://www.google.com/maps/search/Petite+Merveille+BAY函館" target="_blank">Petite Merveille Google Maps</a>
+    </div>
+
+    <div class="item food">
+      <span class="item-time">12:00</span>
+      <div class="item-title"><span class="tag tag-food">🍴 餐飲</span> 午餐</div>
+      <div class="item-desc">函館市區午餐（元町 / 金森周邊自由選擇）</div>
+    </div>
+
+    <div class="item sight">
+      <span class="item-time">13:00~</span>
+      <div class="item-title"><span class="tag tag-sight">⛩ 景點</span> 五稜郭賞櫻</div>
+      <div class="item-desc">
+        日本國家特別史跡，西式星形要塞，春季約有 1,600 棵櫻花樹盛開<br>
+        <span class="sight-accent">建議上五稜郭タワー（瞭望台）俯瞰完整星形輪廓</span>
+      </div>
+      <a class="map-link" href="https://www.google.com/maps/search/五稜郭+函館" target="_blank">在 Google Maps 搜尋</a>
+    </div>
+
+    <div class="item shop">
+      <span class="item-time">13:00~</span>
+      <div class="item-title"><span class="tag tag-shop">🛍 購物</span> 六花亭 五稜郭店</div>
+      <div class="item-desc">北海道著名和菓子・洋菓子品牌，五稜郭附近有分店</div>
+      <a class="map-link" href="https://www.google.com/maps/search/六花亭+五稜郭+函館" target="_blank">在 Google Maps 搜尋</a>
+    </div>
+
+    <div class="item note-item">
+      <span class="item-time">夜間計畫</span>
+      <div class="item-title"><span class="tag tag-note">📌 注意</span> 夜櫻活動</div>
+      <div class="item-desc">
+        若有夜櫻活動，五稜郭需待到晚上<br>
+        燈光照耀下的夜櫻景色絕美，請確認當年度活動時間
+      </div>
+    </div>
+
+    <div class="section-label">函館景點資訊</div>
+
+    <div class="item sight">
+      <span class="item-time">元町地區</span>
+      <div class="item-title"><span class="tag tag-sight">⛩ 景點</span> 函館元町散步建議</div>
+      <div class="item-desc">元町保留了大量明治・大正時代的西洋建築，包含函館聖ヨハネ教會、ハリストス正教会等。坂道眺望函館港景色迷人，建議上午前往光線較佳。</div>
+      <a class="map-link" href="https://www.google.com/maps/search/函館元町+北海道" target="_blank">在 Google Maps 搜尋</a>
+    </div>
+
+    <div class="item note-item">
+      <span class="item-time">重要提醒</span>
+      <div class="item-title"><span class="tag tag-note">📌 注意</span> 明日早班機行前準備</div>
+      <div class="item-desc">明日 4/29 有 12:30 班機，需於 09:00 搭乘機場巴士。今晚務必完成行李整理，並備好 500 日圓現金（巴士費用）。</div>
+    </div>
+
+    <div class="item hotel">
+      <span class="item-time">今晚住宿</span>
+      <div class="item-title"><span class="tag tag-hotel">🏨 住宿</span> JR INN 函館</div>
+      <div class="item-desc">北海道函館市若松町12番14号</div>
+      <a class="map-link" href="https://www.google.com/maps/search/JR+INN+函館+若松町" target="_blank">在 Google Maps 搜尋</a>
+    </div>
+  </div>
+  <div class="page-footer-bar">
+    <span>北海道旅遊攻略 2026</span>
+    <span>DAY 5 · 2026.04.28</span>
+  </div>
+</div>
+
+<!-- ===== DAY 6 (4/29) ===== -->
+<div class="page" id="page-day6">
+  <div class="day-header">
+    <div class="day-header-label">DAY SIX · 4/29 WED</div>
+    <div><span class="day-header-num">06</span><span class="day-header-title">函館 → 桃園回家</span></div>
+    <div class="day-date-badge">2026.04.29</div>
+  </div>
+  <div class="day-content">
+
+    <div class="item food">
+      <span class="item-time">07:00</span>
+      <div class="item-title"><span class="tag tag-food">🍴 餐飲</span> 飯店早餐</div>
+      <div class="item-desc">JR INN 函館，享用最後一頓日本早餐</div>
+    </div>
+
+    <div class="item transport">
+      <span class="item-time">09:30</span>
+      <div class="item-title"><span class="tag tag-transport">✈ 交通</span> 機場巴士出發</div>
+      <div class="item-desc">
+        函館市區 → 函館空港（HKD）<br>
+        <span style="color:var(--col-note); font-weight:600;">搭右側座位可欣賞海景！</span><br>
+        費用：500 日圓（現金）
+      </div>
+      <a class="map-link" href="https://www.google.com/maps/search/函館空港+HKD" target="_blank">在 Google Maps 搜尋</a>
+    </div>
+
+    <div class="item note-item">
+      <span class="item-time">10:00</span>
+      <div class="item-title"><span class="tag tag-note">📌 注意</span> 國際線航廈開放</div>
+      <div class="item-desc">
+        函館機場國際線航廈 <strong>10:00 才開始服務</strong><br>
+        務必準時抵達，不宜提早太多無法進入
+      </div>
+    </div>
+
+    <div class="item transport">
+      <span class="item-time">12:30 – 15:45</span>
+      <div class="item-title"><span class="tag tag-transport">✈ 交通</span> IT237 HKD → TPE</div>
+      <div class="item-desc">
+        函館機場 → 桃園國際機場<br>
+        飛行時間約 3 小時 15 分<br>
+        抵達台灣時間 15:45
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="highlight-box">
+      <div class="highlight-jp">ありがとう</div>
+      <div class="highlight-sub">北海道 · 2026.04.24 – 04.29</div>
+    </div>
+
+    <div style="margin-top: 14px; font-size: 13px; color: var(--medium); line-height: 1.9; padding: 0 4px; text-align: center;">
+      6 天 5 夜的北海道旅程圓滿結束。<br>
+      從札幌的繁華到函館的浪漫，<br>
+      從小樽的海風到五稜郭的夜櫻，<br>
+      每一刻都是美好的記憶。
+    </div>
+
+    <div class="section-label" style="margin-top:24px;">出發前注意事項</div>
+
+    <div class="item note-item">
+      <div class="item-title"><span class="tag tag-note">📌</span> 現金準備</div>
+      <div class="item-desc">
+        <div class="sub-item">機場巴士 500 日圓現金（4/29）</div>
+        <div class="sub-item">日本部分小店僅收現金</div>
+        <div class="sub-item">建議備有零錢方便自動售票機</div>
+      </div>
+    </div>
+
+    <div class="item note-item">
+      <div class="item-title"><span class="tag tag-note">📌</span> 4月下旬北海道天氣</div>
+      <div class="item-desc">日夜溫差大，白天約 10–15°C，早晚需外套。函館沿海風大，需備風衣。</div>
+    </div>
+  </div>
+  <div class="page-footer-bar">
+    <span>北海道旅遊攻略 2026</span>
+    <span>DAY 6 · 2026.04.29</span>
+  </div>
+</div>
+
+<script>
+function showPage(day, btn) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('page-' + day).classList.add('active');
+  if (btn) btn.classList.add('active');
+  window.scrollTo(0, 0);
+}
+</script>
+</body>
+</html>
