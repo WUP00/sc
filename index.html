@@ -134,6 +134,39 @@ a { text-decoration: none; color: inherit; }
   line-height: 1.8;
 }
 
+/* ── COUPON CTA ── */
+.coupon-cta {
+  margin-top: 18px;
+}
+.coupon-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 14px;
+  border-radius: 999px;
+  border: 1px solid rgba(245,240,232,0.35);
+  background: rgba(245,240,232,0.08);
+  color: var(--cream);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-decoration: none;
+  transition: transform 0.15s ease, background 0.15s ease, border-color 0.15s ease;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+.coupon-btn:active {
+  transform: translateY(1px);
+  background: rgba(245,240,232,0.14);
+  border-color: rgba(245,240,232,0.5);
+}
+.coupon-btn::before {
+  content: '🎟';
+  font-size: 13px;
+  line-height: 1;
+}
+
 /* ── OVERVIEW BOX ── */
 .overview-section {
   background: var(--warm-white);
@@ -478,6 +511,14 @@ a { text-decoration: none; color: inherit; }
       </div>
       <div class="cover-sub">
         包含行程 · 交通 · 餐飲 · 購物<br>及住宿資訊完整版
+      </div>
+      <div class="coupon-cta">
+        <a
+          class="coupon-btn"
+          href="https://www.threads.com/@bubu_japan/post/DVpS2p7EyCr?xmt=AQF0aF3KaO8KEKQETCxsS3LD0FAjn6WlyXONELLW1Nv9OPmMgXdl4LHn4RgthLB2I-jIabc&slof=1"
+          target="_blank"
+          rel="noopener noreferrer"
+        >Threads 優惠卷 </a>
       </div>
     </div>
 
