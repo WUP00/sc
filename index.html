@@ -1,0 +1,1097 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>東京短打旅行 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@300;400;600;700&family=Noto+Sans+TC:wght@300;400;500;600&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --cream: #f5f0e8;
+  --warm-white: #faf8f4;
+  --charcoal: #2c2a26;
+  --medium: #6b6059;
+  --light: #9c9089;
+  --border: #d8d0c4;
+  --col-transport: #7a8fa0;
+  --col-transport-bg: #edf1f5;
+  --col-food: #9a7c6e;
+  --col-food-bg: #f5ede9;
+  --col-sight: #7a9080;
+  --col-sight-bg: #ecf2ee;
+  --col-shop: #9a8a6e;
+  --col-shop-bg: #f5f0e6;
+  --col-hotel: #7a7a9a;
+  --col-hotel-bg: #eeeef5;
+  --col-note: #8a7a6a;
+  --col-note-bg: #f2ece6;
+  --col-evening: #8a5a6a;
+  --col-evening-bg: #f8eef2;
+  --col-concert: #c06820;
+  --col-concert-bg: #fff4e8;
+  --accent: #c0392b;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+
+body {
+  font-family: 'Noto Sans TC', sans-serif;
+  background: #e8e4dc;
+  color: var(--charcoal);
+  font-size: 15px;
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+a { text-decoration: none; color: inherit; }
+
+/* ── TOP NAV ── */
+.top-nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--charcoal);
+  padding: 0 4px;
+  display: flex;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+.top-nav::-webkit-scrollbar { display: none; }
+.nav-btn {
+  flex-shrink: 0;
+  padding: 12px 14px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--light);
+  cursor: pointer;
+  letter-spacing: 0.06em;
+  white-space: nowrap;
+  border-bottom: 2px solid transparent;
+  transition: color 0.2s, border-color 0.2s;
+  background: none;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+}
+.nav-btn.active {
+  color: var(--cream);
+  border-bottom-color: var(--cream);
+}
+
+/* ── PAGES ── */
+.page { display: none; }
+.page.active { display: block; }
+
+/* ── COVER ── */
+.cover {
+  background: var(--charcoal);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+.cover-hero {
+  background: var(--charcoal);
+  padding: 48px 24px 36px;
+  flex: 1;
+}
+.cover-accent {
+  width: 32px; height: 3px;
+  background: var(--accent);
+  margin-bottom: 20px;
+}
+.cover-title-jp {
+  font-family: 'Playfair Display', 'Noto Serif TC', serif;
+  font-size: 52px;
+  font-weight: 700;
+  color: var(--cream);
+  line-height: 1.1;
+  margin-bottom: 6px;
+}
+.cover-title-zh {
+  font-family: 'Noto Serif TC', serif;
+  font-size: 22px;
+  font-weight: 300;
+  color: var(--light);
+  letter-spacing: 0.15em;
+  margin-bottom: 28px;
+}
+.cover-dates {
+  border-top: 1px solid #5a5248;
+  padding-top: 20px;
+  font-size: 13px;
+  color: var(--light);
+  letter-spacing: 0.06em;
+  line-height: 1.8;
+}
+.cover-dates strong {
+  display: block;
+  color: var(--cream);
+  font-size: 16px;
+  margin-bottom: 6px;
+}
+.cover-sub {
+  margin-top: 20px;
+  font-size: 12px;
+  color: #6b6560;
+  line-height: 1.8;
+}
+
+/* ── OVERVIEW BOX ── */
+.overview-section {
+  background: var(--warm-white);
+  padding: 24px 20px;
+}
+.section-head {
+  font-family: 'Playfair Display', serif;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--light);
+  margin-bottom: 14px;
+}
+.overview-box {
+  background: var(--charcoal);
+  color: var(--cream);
+  border-radius: 8px;
+  padding: 18px 16px;
+  margin-bottom: 20px;
+}
+.overview-row {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+  font-size: 13px;
+  line-height: 1.5;
+}
+.overview-row:last-child { margin-bottom: 0; }
+.overview-day {
+  min-width: 22px;
+  font-weight: 700;
+  color: var(--light);
+  font-size: 12px;
+  padding-top: 1px;
+}
+
+/* ── HOTEL CARDS ── */
+.hotel-card {
+  background: var(--col-hotel-bg);
+  border: 1px solid #c4c4d8;
+  border-radius: 8px;
+  padding: 14px 16px;
+  margin-bottom: 10px;
+}
+.hotel-card .hb-name {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--col-hotel);
+  margin-bottom: 4px;
+}
+.hotel-card .hb-addr {
+  font-size: 12px;
+  color: var(--medium);
+  line-height: 1.5;
+}
+.map-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  margin-top: 6px;
+  font-size: 11px;
+  font-weight: 600;
+  color: #4285f4;
+  background: rgba(66,133,244,0.08);
+  padding: 3px 8px;
+  border-radius: 20px;
+  text-decoration: none;
+}
+.map-link::before {
+  content: '📍';
+  font-size: 11px;
+}
+
+/* ── LEGEND ── */
+.legend-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 8px;
+}
+
+/* ── TOC ── */
+.toc-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-top: 14px;
+}
+.toc-card {
+  background: var(--warm-white);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 14px 12px;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+.toc-card:active { background: var(--cream); }
+.toc-day-num {
+  font-family: 'Playfair Display', serif;
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--light);
+  line-height: 1;
+  margin-bottom: 4px;
+}
+.toc-date {
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--medium);
+  letter-spacing: 0.06em;
+  display: block;
+  margin-bottom: 2px;
+}
+.toc-desc {
+  font-size: 13px;
+  color: var(--charcoal);
+  font-weight: 500;
+  line-height: 1.3;
+}
+
+/* ── DAY PAGE ── */
+.day-header {
+  background: var(--charcoal);
+  padding: 20px 20px 16px;
+  color: var(--cream);
+}
+.day-header-label {
+  font-size: 10px;
+  color: var(--light);
+  letter-spacing: 0.1em;
+  margin-bottom: 4px;
+}
+.day-header-num {
+  font-family: 'Playfair Display', serif;
+  font-size: 40px;
+  font-weight: 700;
+  color: #5a5248;
+  line-height: 1;
+  display: inline;
+  margin-right: 8px;
+}
+.day-header-title {
+  font-family: 'Noto Serif TC', serif;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--cream);
+  display: inline;
+}
+.day-date-badge {
+  display: inline-block;
+  background: rgba(255,255,255,0.1);
+  color: var(--light);
+  font-size: 11px;
+  padding: 3px 10px;
+  border-radius: 20px;
+  margin-top: 8px;
+  letter-spacing: 0.06em;
+}
+
+.day-content {
+  padding: 16px 16px 40px;
+}
+
+/* ── SECTION LABEL ── */
+.section-label {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--light);
+  margin: 20px 0 10px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.section-label::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+}
+
+/* ── ITEM BLOCK ── */
+.item {
+  margin-bottom: 14px;
+  padding: 12px 14px;
+  border-left: 3px solid var(--border);
+  background: var(--warm-white);
+  border-radius: 0 8px 8px 0;
+  position: relative;
+}
+.item.transport { border-left-color: var(--col-transport); }
+.item.food      { border-left-color: var(--col-food); }
+.item.sight     { border-left-color: var(--col-sight); }
+.item.shop      { border-left-color: var(--col-shop); }
+.item.hotel     { border-left-color: var(--col-hotel); }
+.item.note-item { border-left-color: var(--col-note); }
+.item.evening   { border-left-color: var(--col-evening); background: var(--col-evening-bg); }
+.item.concert   { border-left-color: var(--col-concert); background: var(--col-concert-bg); }
+
+.item-time {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--light);
+  letter-spacing: 0.05em;
+  display: block;
+  margin-bottom: 2px;
+}
+.item-title {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--charcoal);
+  margin-bottom: 4px;
+  line-height: 1.4;
+}
+.item-desc {
+  font-size: 13px;
+  color: var(--medium);
+  line-height: 1.6;
+}
+
+/* ── TAGS ── */
+.tag {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 600;
+  padding: 2px 7px;
+  border-radius: 4px;
+  margin-right: 3px;
+  margin-bottom: 3px;
+  letter-spacing: 0.04em;
+  vertical-align: middle;
+}
+.tag-transport { background: var(--col-transport-bg); color: var(--col-transport); }
+.tag-food      { background: var(--col-food-bg);      color: var(--col-food); }
+.tag-sight     { background: var(--col-sight-bg);     color: var(--col-sight); }
+.tag-shop      { background: var(--col-shop-bg);      color: var(--col-shop); }
+.tag-hotel     { background: var(--col-hotel-bg);     color: var(--col-hotel); }
+.tag-note      { background: var(--col-note-bg);      color: var(--col-note); }
+.tag-evening   { background: var(--col-evening-bg);  color: var(--col-evening); }
+.tag-concert   { background: var(--col-concert-bg);  color: var(--col-concert); }
+
+/* ── SUB-ITEMS ── */
+.sub-item {
+  font-size: 13px;
+  color: var(--medium);
+  padding: 3px 0 3px 10px;
+  border-left: 2px solid var(--col-food-bg);
+  margin-bottom: 4px;
+  line-height: 1.4;
+}
+.sub-item::before { content: '・'; color: var(--col-food); }
+
+/* ── RESERVATION BOX ── */
+.reservation-box {
+  background: var(--col-note-bg);
+  border: 1px solid #c8b8a8;
+  border-radius: 6px;
+  padding: 10px 12px;
+  margin: 6px 0;
+  font-size: 13px;
+  color: var(--medium);
+  line-height: 1.7;
+}
+.reservation-box .rb-title {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--col-note);
+  margin-bottom: 4px;
+}
+
+/* ── DIVIDER ── */
+.divider {
+  width: 100%;
+  height: 1px;
+  background: var(--border);
+  margin: 14px 0;
+}
+
+/* ── HIGHLIGHT BOX ── */
+.highlight-box {
+  text-align: center;
+  padding: 20px 16px;
+  background: var(--cream);
+  border-radius: 8px;
+  margin: 14px 0;
+}
+.highlight-jp {
+  font-family: 'Playfair Display', serif;
+  font-size: 26px;
+  color: var(--light);
+  line-height: 1.2;
+}
+.highlight-sub {
+  font-size: 11px;
+  color: var(--medium);
+  margin-top: 6px;
+  letter-spacing: 0.1em;
+}
+
+/* ── PAGE FOOTER ── */
+.page-footer-bar {
+  background: var(--charcoal);
+  padding: 10px 16px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 10px;
+  color: var(--light);
+  letter-spacing: 0.05em;
+  margin-top: 8px;
+}
+
+/* ── NOTE COLOR ── */
+.note-color { color: var(--col-note); font-size: 12px; }
+.sight-accent { color: var(--col-sight); font-weight: 600; font-size: 12px; }
+.warn-red { color: var(--accent); font-weight: 700; font-size: 12px; }
+
+/* ── SHOP PAGE ── */
+.shop-card {
+  background: var(--warm-white);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 14px 12px;
+  margin-bottom: 14px;
+}
+.shop-note-box {
+  background: #fff8e8;
+  border: 1px solid #e8d4a0;
+  border-radius: 8px;
+  padding: 10px 14px;
+  margin-bottom: 10px;
+  color: var(--charcoal);
+  line-height: 1.7;
+}
+.shop-floors { display: flex; flex-direction: column; gap: 8px; }
+.floor-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+.floor-badge {
+  flex-shrink: 0;
+  width: 30px;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-align: center;
+  padding: 3px 2px;
+  border-radius: 5px;
+  margin-top: 2px;
+}
+.floor-b2  { background: #3a3530; color: #f5f0e8; }
+.floor-b1  { background: #5a5248; color: #f5f0e8; }
+.floor-1f  { background: #7a9080; color: #fff; }
+.floor-2f  { background: #7a8fa0; color: #fff; }
+.floor-3f  { background: #9a8a6e; color: #fff; }
+.floor-4f  { background: #9a7c6e; color: #fff; }
+.floor-5f  { background: #7a7a9a; color: #fff; }
+.floor-6f  { background: #8a7a6a; color: #fff; }
+.floor-7f  { background: #6e8a7a; color: #fff; }
+.floor-8f  { background: #8a6e7a; color: #fff; }
+.floor-items { display: flex; flex-wrap: wrap; gap: 5px; }
+.shop-tag {
+  display: inline-block;
+  font-size: 11px;
+  padding: 3px 8px;
+  border-radius: 20px;
+  background: var(--cream);
+  color: var(--charcoal);
+  border: 1px solid var(--border);
+  line-height: 1.4;
+}
+.highlight-shop {
+  background: var(--col-shop-bg);
+  color: #494949;
+  border-color: #fffb00;
+  font-weight: 700;
+}
+.food-tag {
+  background: var(--col-food-bg);
+  color: var(--col-food);
+  border-color: #d8b8a8;
+}
+</style>
+</head>
+<body>
+
+<!-- TOP NAV -->
+<nav class="top-nav" id="mainNav">
+  <button class="nav-btn active" onclick="showPage('cover', this)">封面</button>
+  <button class="nav-btn" onclick="showPage('day1', this)">D1 · 7/3</button>
+  <button class="nav-btn" onclick="showPage('day2', this)">D2 · 7/4</button>
+  <button class="nav-btn" onclick="showPage('day3', this)">D3 · 7/5</button>
+  <button class="nav-btn" onclick="showPage('day4', this)">D4 · 7/6</button>
+</nav>
+
+<!-- ===== COVER PAGE ===== -->
+<div class="page active" id="page-cover">
+  <div class="cover">
+    <div class="cover-hero">
+      <div class="cover-accent"></div>
+      <div class="cover-title-jp">東京</div>
+      <div class="cover-title-zh">短打旅行</div>
+      <div class="cover-dates">
+        <strong>2026 · JUL 3 – JUL 6</strong>
+        桃園 → 成田 → 秋葉原 → 動物園 → 池袋 → 羽田 → 桃園<br>
+        4 天 3 夜 · 老祖宗有保佑 🙏
+      </div>
+      <div class="cover-sub">
+        包含行程 · 交通 · 餐飲 · 購物<br>及住宿資訊完整版
+      </div>
+    </div>
+
+    <div class="overview-section">
+      <div class="section-head">Day by Day Overview</div>
+      <div class="overview-box">
+        <div class="overview-row"><div class="overview-day">D1</div><div>7/3 桃園出發，抵成田，入住秋葉原，上野マルイ POP-UP（18:30）→ 房家ホルモン館（19:15 已預約）</div></div>
+        <div class="overview-row"><div class="overview-day">D2</div><div>7/4 市川動植物園 → 吉卡哇公園（16:30）→ 池袋 LUMINE / PARCO → ちいかわレストラン（20:00 已預約）</div></div>
+        <div class="overview-row"><div class="overview-day">D3</div><div>7/5 ≪ZENJIN MITO TO IM/MUTABLE〜間奏篇〜≫ 演唱會（18:30 開演）→ 原宿 I'm donut / Tas Yard</div></div>
+        <div class="overview-row"><div class="overview-day">D4</div><div>7/6 退房，巴士至濱松町，羽田機場返台</div></div>
+      </div>
+
+      <div class="section-head">住宿資訊</div>
+      <div class="hotel-card">
+        <div class="hb-name"><span class="tag tag-hotel">🏨 住宿</span> THE TOURIST HOTEL &amp; Cafe AKIHABARA</div>
+        <div class="hb-addr">〒110-0016 東京都台東区台東1-6-6<br>入住：7/3 ｜ 退房：7/6</div>
+        <a class="map-link" href="https://www.google.com/maps/search/THE+TOURIST+HOTEL+Cafe+AKIHABARA+台東" target="_blank">在 Google Maps 搜尋</a>
+      </div>
+
+      <div class="section-head" style="margin-top:20px;">目錄</div>
+      <div class="toc-grid">
+        <div class="toc-card" onclick="showPage('day1', document.querySelectorAll('.nav-btn')[1])">
+          <div class="toc-day-num">D1</div>
+          <span class="toc-date">7/3 FRI</span>
+          <div class="toc-desc">桃園出發 → 秋葉原</div>
+        </div>
+        <div class="toc-card" onclick="showPage('day2', document.querySelectorAll('.nav-btn')[2])">
+          <div class="toc-day-num">D2</div>
+          <span class="toc-date">7/4 SAT</span>
+          <div class="toc-desc">市川動植物園 · 池袋</div>
+        </div>
+        <div class="toc-card" onclick="showPage('day3', document.querySelectorAll('.nav-btn')[3])">
+          <div class="toc-day-num">D3</div>
+          <span class="toc-date">7/5 SUN</span>
+          <div class="toc-desc">演唱會 · 原宿甜點</div>
+        </div>
+        <div class="toc-card" onclick="showPage('day4', document.querySelectorAll('.nav-btn')[4])">
+          <div class="toc-day-num">D4</div>
+          <span class="toc-date">7/6 MON</span>
+          <div class="toc-desc">退房 → 羽田 → 桃園</div>
+        </div>
+      </div>
+
+      <div class="section-head" style="margin-top:20px;">類型標籤說明</div>
+      <div class="legend-row">
+        <span class="tag tag-transport">✈ 交通</span>
+        <span class="tag tag-food">🍴 餐飲</span>
+        <span class="tag tag-sight">⛩ 景點</span>
+        <span class="tag tag-shop">🛍 購物</span>
+        <span class="tag tag-hotel">🏨 住宿</span>
+        <span class="tag tag-note">📌 注意</span>
+      </div>
+    </div>
+  </div>
+  <div class="page-footer-bar">
+    <span>東京短打旅行 2026</span>
+    <span>封面 · 目錄</span>
+  </div>
+</div>
+
+<!-- ===== DAY 1 (7/3) ===== -->
+<div class="page" id="page-day1">
+  <div class="day-header">
+    <div class="day-header-label">DAY ONE · 7/3 FRI</div>
+    <div><span class="day-header-num">01</span><span class="day-header-title">桃園出發 → 秋葉原</span></div>
+    <div class="day-date-badge">2026.07.03</div>
+  </div>
+  <div class="day-content">
+
+    <div class="item transport">
+      <span class="item-time">10:50 – 15:20</span>
+      <div class="item-title"><span class="tag tag-transport">✈ 交通</span> MM626 TPE → NRT</div>
+      <div class="item-desc">桃園國際機場 T1 → 成田機場 T1<br>飛行時間約 3 小時 30 分</div>
+    </div>
+
+    <div class="item transport">
+      <span class="item-time">15:20~</span>
+      <div class="item-title"><span class="tag tag-transport">✈ 交通</span> 成田 → 秋葉原</div>
+      <div class="item-desc">抵達成田機場後，搭電車或巴士前往市區，入住 THE TOURIST HOTEL &amp; Cafe AKIHABARA<br>飯店步行到秋葉原站約 9 分鐘</div>
+      <a class="map-link" href="https://www.google.com/maps/search/THE+TOURIST+HOTEL+Cafe+AKIHABARA" target="_blank">在 Google Maps 搜尋</a>
+    </div>
+
+    <div class="item hotel">
+      <span class="item-time">Check-in</span>
+      <div class="item-title"><span class="tag tag-hotel">🏨 住宿</span> THE TOURIST HOTEL &amp; Cafe AKIHABARA</div>
+      <div class="item-desc">東京都台東区台東1-6-6<br>放行李後出發逛街</div>
+      <a class="map-link" href="https://www.google.com/maps/search/THE+TOURIST+HOTEL+Cafe+AKIHABARA+台東" target="_blank">在 Google Maps 搜尋</a>
+    </div>
+
+    <div class="item food">
+      <span class="item-time">18:30</span>
+      <div class="item-title"><span class="tag tag-food">🍴 餐飲</span> 上野マルイ 期間限定 POP-UP STORE</div>
+      <div class="item-desc">
+        <div class="reservation-box">
+          <div class="rb-title">📋 已預約 18:30</div>
+          ゼンジン未到とイミュータブル〜間奏編〜<br>
+          POP-UP STORE<br>
+          上野マルイ
+        </div>
+      </div>
+      <a class="map-link" href="https://www.google.com/maps/search/上野マルイ" target="_blank">在 Google Maps 搜尋</a>
+    </div>
+
+    <div class="item food">
+      <span class="item-time">19:15</span>
+      <div class="item-title"><span class="tag tag-food">🍴 餐飲</span> 房家ホルモン館 上野六丁目店</div>
+      <div class="item-desc">
+        <div class="reservation-box">
+          <div class="rb-title">📋 已預約 19:15</div>
+          人數請確認，不可遲到！
+        </div>
+      </div>
+      <a class="map-link" href="https://www.google.com/maps/search/房家ホルモン館+上野六丁目" target="_blank">在 Google Maps 搜尋</a>
+    </div>
+
+    <div class="section-label">晚間採購</div>
+
+    <div class="item shop evening">
+      <span class="item-time">晚間</span>
+      <div class="item-title"><span class="tag tag-evening">🛍 購物</span> TAKEYA 多慶屋 食品・生活館</div>
+      <div class="item-desc">上野附近超大型折扣百貨，食品、日用品、藥妝通通有<br><span class="note-color">⚠ 開到 22:00</span></div>
+      <a class="map-link" href="https://maps.app.goo.gl/UdNow7kF88d5FkrQ8" target="_blank">在 Google Maps 搜尋</a>
+    </div>
+
+    <div class="item shop evening">
+      <span class="item-time">晚間</span>
+      <div class="item-title"><span class="tag tag-evening">🛍 購物</span> OS Drug Ueno</div>
+      <div class="item-desc">上野藥妝店<br><span class="note-color">⚠ 開到 19:45，注意時間！</span></div>
+      <a class="map-link" href="https://maps.app.goo.gl/i2gVCDNN8Bp8YiwY8" target="_blank">在 Google Maps 搜尋</a>
+    </div>
+
+    <div class="item note-item evening">
+      <span class="item-time">採購備忘</span>
+      <div class="item-title"><span class="tag tag-note">📌 注意</span> 7/4 先買完瓶瓶罐罐</div>
+      <div class="item-desc">4號（7/4）先把瓶瓶罐罐液體類採購完畢<br>5號（7/5）阿頭摳只買手掌心大小的品項</div>
+    </div>
+
+    <div class="item food evening">
+      <span class="item-time">回飯店前</span>
+      <div class="item-title"><span class="tag tag-food">🍴 餐飲</span> Beard Papa's 薄荷巧克力泡芙</div>
+      <a class="map-link" href="https://share.google/ttT5j8s0ryOxk6urd" target="_blank">在 Google Maps 搜尋</a>
+    </div>
+
+    <div class="item hotel">
+      <span class="item-time">今晚住宿</span>
+      <div class="item-title"><span class="tag tag-hotel">🏨 住宿</span> THE TOURIST HOTEL &amp; Cafe AKIHABARA</div>
+      <div class="item-desc">東京都台東区台東1-6-6</div>
+      <a class="map-link" href="https://www.google.com/maps/search/THE+TOURIST+HOTEL+Cafe+AKIHABARA+台東" target="_blank">在 Google Maps 搜尋</a>
+    </div>
+  </div>
+  <div class="page-footer-bar">
+    <span>東京短打旅行 2026</span>
+    <span>DAY 1 · 2026.07.03</span>
+  </div>
+</div>
+
+<!-- ===== DAY 2 (7/4) ===== -->
+<div class="page" id="page-day2">
+  <div class="day-header">
+    <div class="day-header-label">DAY TWO · 7/4 SAT</div>
+    <div><span class="day-header-num">02</span><span class="day-header-title">市川動植物園 · 吉卡哇公園 · 池袋</span></div>
+    <div class="day-date-badge">2026.07.04</div>
+  </div>
+  <div class="day-content">
+
+    <div class="item transport">
+      <span class="item-time">08:00</span>
+      <div class="item-title"><span class="tag tag-transport">✈ 交通</span> 飯店 → 秋葉原站（步行 9 分）</div>
+      <div class="item-desc">
+        搭 <strong>中央‧總武線各站停車（津田沼方向）</strong><br>
+        秋葉原 → 西船橋（約 30 分）<br>
+        換 <strong>武蔵野線各站停車（府中本町方向）</strong><br>
+        西船橋 → 市川大野（約 6 分）<br>
+        市川大野站搭巴士「本15」到動物園站（約 13 分）或叫 Uber（約 9 分）
+      </div>
+    </div>
+
+    <div class="item note-item">
+      <span class="item-time">巴士提示</span>
+      <div class="item-title"><span class="tag tag-note">📌 注意</span> 市川大野站巴士時刻表</div>
+      <div class="item-desc">動物園那邊有貼時刻表，不要搭到「本33」（要 22 分鐘），盡量搭「本15」</div>
+      <a class="map-link" href="https://www.google.com/maps/search/市川大野駅" target="_blank">在 Google Maps 搜尋</a>
+    </div>
+
+    <div class="item sight">
+      <div class="item-title"><span class="tag tag-sight">⛩ 景點</span> 市川市動植物園</div>
+      <div class="item-desc">
+        東京近郊的療癒動植物園<br>
+        <span class="sight-accent">12:00 サル山餵食秀，建議 10:40 就卡好位！</span><br>
+        <br>
+        園區內解決午餐
+      </div>
+      <a class="map-link" href="https://www.google.com/maps/search/市川市動植物園" target="_blank">在 Google Maps 搜尋</a>
+    </div>
+
+    <div class="item transport">
+      <span class="item-time">13:00</span>
+      <div class="item-title"><span class="tag tag-transport">✈ 交通</span> 動物園 → 池袋</div>
+      <div class="item-desc">
+        巴士「本15」（13 分）或 Uber（9 分）到市川大野站<br>
+        搭 <strong>武蔵野線（南船橋行）</strong> → 西船橋（6 分）<br>
+        換 <strong>中央・総武線各停（三鷹行）</strong> → 御茶ノ水（30 分）<br>
+        換 <strong>東京メトロ丸ノ内線（池袋行）</strong> → 池袋（11 分）<br>
+        <span class="note-color">本15 巴士看當下時間有沒有對到就好ㄌ</span>
+      </div>
+    </div>
+
+    <div class="item food">
+      <span class="item-time">15:00</span>
+      <div class="item-title"><span class="tag tag-food">🍴 餐飲</span> ねぎし 池袋東口店</div>
+      <div class="item-desc">以牛舌丼聞名的連鎖餐廳，上次走過了反正就那樣，這次找到！</div>
+      <a class="map-link" href="https://www.google.com/maps/search/ねぎし+池袋東口" target="_blank">在 Google Maps 搜尋</a>
+    </div>
+
+    <div class="item sight">
+      <span class="item-time">16:30</span>
+      <div class="item-title"><span class="tag tag-sight">⛩ 景點</span> 吉卡哇公園（ちいかわパーク）</div>
+      <div class="item-desc">
+        <span class="warn-red">16:30 開放進場</span>，請提前到場排隊！
+      </div>
+      <a class="map-link" href="https://www.google.com/maps/search/ちいかわパーク+東京" target="_blank">在 Google Maps 搜尋</a>
+    </div>
+
+    <div class="item shop">
+      <span class="item-time">17:00</span>
+      <div class="item-title"><span class="tag tag-shop">🛍 購物</span> 池袋 LUMINE</div>
+      <div class="item-desc">池袋車站直結商場</div>
+      <a class="map-link" href="https://www.google.com/maps/search/池袋LUMINE" target="_blank">在 Google Maps 搜尋</a>
+      <div class="shop-card" style="margin-top:10px;">
+        <div class="shop-floors">
+          <div class="floor-row">
+            <div class="floor-badge floor-b1">B1</div>
+            <div class="floor-items">
+              <span class="shop-tag">SHIRO</span>
+              <span class="shop-tag">Maison Margiela Fragrances</span>
+            </div>
+          </div>
+          <div class="floor-row">
+            <div class="floor-badge floor-1f">1F</div>
+            <div class="floor-items">
+              <span class="shop-tag">TULLY'S COFFEE</span>
+              <span class="shop-tag">HARBS</span>
+              <span class="shop-tag highlight-shop">BEAMS</span>
+            </div>
+          </div>
+          <div class="floor-row">
+            <div class="floor-badge floor-4f">4F</div>
+            <div class="floor-items">
+              <span class="shop-tag highlight-shop">GOLDY</span>
+              <span class="shop-tag">LOWRYS FARM</span>
+              <span class="shop-tag">Heather</span>
+              <span class="shop-tag">JEANASiS</span>
+            </div>
+          </div>
+          <div class="floor-row">
+            <div class="floor-badge floor-5f">5F</div>
+            <div class="floor-items">
+              <span class="shop-tag highlight-shop">3COINS Plus</span>
+            </div>
+          </div>
+          <div class="floor-row">
+            <div class="floor-badge floor-6f">6F</div>
+            <div class="floor-items">
+              <span class="shop-tag">ABC-MART GRAND STAGE</span>
+            </div>
+          </div>
+          <div class="floor-row">
+            <div class="floor-badge floor-7f">7F</div>
+            <div class="floor-items">
+              <span class="shop-tag highlight-shop">無印良品</span>
+              <span class="shop-tag highlight-shop">@cosme STORE</span>
+              <span class="shop-tag highlight-shop">AUX PARADIS</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-label">晚間</div>
+
+    <div class="item shop evening">
+      <span class="item-time">晚間</span>
+      <div class="item-title"><span class="tag tag-evening">🛍 購物</span> 池袋 PARCO</div>
+      <a class="map-link" href="https://www.google.com/maps/search/池袋パルコ" target="_blank">在 Google Maps 搜尋</a>
+      <div class="shop-card" style="margin-top:10px;">
+        <div class="shop-floors">
+          <div class="floor-row">
+            <div class="floor-badge floor-b2">B2</div>
+            <div class="floor-items">
+              <span class="shop-tag">AINZ＆TULPE</span>
+              <span class="shop-tag highlight-shop">chiikawaland 🐭</span>
+              <span class="shop-tag highlight-shop">JUMP SHOP</span>
+              <span class="shop-tag highlight-shop">POMME d'AMOUR（蘋果糖）</span>
+            </div>
+          </div>
+          <div class="floor-row">
+            <div class="floor-badge floor-b1">B1</div>
+            <div class="floor-items">
+              <span class="shop-tag food-tag">HARBS</span>
+              <span class="shop-tag">SNIDEL</span>
+            </div>
+          </div>
+          <div class="floor-row">
+            <div class="floor-badge floor-1f">1F</div>
+            <div class="floor-items">
+              <span class="shop-tag">Aíam</span>
+            </div>
+          </div>
+          <div class="floor-row">
+            <div class="floor-badge floor-3f">3F</div>
+            <div class="floor-items">
+              <span class="shop-tag">Sanrio animestore</span>
+              <span class="shop-tag">UNITED ARROWS</span>
+            </div>
+          </div>
+          <div class="floor-row">
+            <div class="floor-badge floor-4f">4F</div>
+            <div class="floor-items">
+              <span class="shop-tag highlight-shop">WEGO</span>
+              <span class="shop-tag highlight-shop">TiCTAC（鐘錶店）</span>
+            </div>
+          </div>
+          <div class="floor-row">
+            <div class="floor-badge floor-5f">5F</div>
+            <div class="floor-items">
+              <span class="shop-tag">Seria</span>
+            </div>
+          </div>
+          <div class="floor-row">
+            <div class="floor-badge floor-6f">6F</div>
+            <div class="floor-items">
+              <span class="shop-tag">BanG Dream! STORE</span>
+              <span class="shop-tag highlight-shop">TOWER RECORDS</span>
+            </div>
+          </div>
+          <div class="floor-row">
+            <div class="floor-badge floor-7f">7F</div>
+            <div class="floor-items">
+              <span class="shop-tag highlight-shop">THE GUEST CAFE BY PARCO（吉餐廳）</span>
+            </div>
+          </div>
+          <div class="floor-row">
+            <div class="floor-badge floor-8f">8F</div>
+            <div class="floor-items">
+              <span class="shop-tag food-tag">Chiikawa ramen buta</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="item food evening">
+      <div class="item-title"><span class="tag tag-food">🍴 餐飲</span> 甜點補給</div>
+      <div class="item-desc">
+        <div class="sub-item">I'm donut ？池袋（甜甜圈）</div>
+        <a class="map-link" href="https://www.google.com/maps/search/I'm+donut+池袋" target="_blank">I'm donut ？池袋 · 在 Google Maps 搜尋</a>
+        <div class="sub-item" style="margin-top:8px;">RINGO 池袋店（蘋果派）</div>
+        <a class="map-link" href="https://www.google.com/maps/search/RINGO+池袋店" target="_blank">RINGO 池袋店 · 在 Google Maps 搜尋</a>
+      </div>
+    </div>
+
+    <div class="item food">
+      <span class="item-time">20:00</span>
+      <div class="item-title"><span class="tag tag-food">🍴 餐飲</span> ☆ちいかわレストラン☆</div>
+      <div class="item-desc">
+        <div class="reservation-box">
+          <div class="rb-title">📋 已預約 20:00 集合</div>
+          池袋PARCO 本館7階<br>
+          <span class="warn-red">20:00 集合時間，請勿遲到！</span>
+        </div>
+      </div>
+      <a class="map-link" href="https://tw.cafe.parco.jp/event/reservation/chiikawarestaurant_tokyo?area=029439" target="_blank">ちいかわレストラン 預約頁面</a>
+    </div>
+
+    <div class="item hotel">
+      <span class="item-time">今晚住宿</span>
+      <div class="item-title"><span class="tag tag-hotel">🏨 住宿</span> THE TOURIST HOTEL &amp; Cafe AKIHABARA</div>
+      <div class="item-desc">東京都台東区台東1-6-6</div>
+      <a class="map-link" href="https://www.google.com/maps/search/THE+TOURIST+HOTEL+Cafe+AKIHABARA+台東" target="_blank">在 Google Maps 搜尋</a>
+    </div>
+  </div>
+  <div class="page-footer-bar">
+    <span>東京短打旅行 2026</span>
+    <span>DAY 2 · 2026.07.04</span>
+  </div>
+</div>
+
+<!-- ===== DAY 3 (7/5) ===== -->
+<div class="page" id="page-day3">
+  <div class="day-header">
+    <div class="day-header-label">DAY THREE · 7/5 SUN</div>
+    <div><span class="day-header-num">03</span><span class="day-header-title">演唱會 · 原宿</span></div>
+    <div class="day-date-badge">2026.07.05</div>
+  </div>
+  <div class="day-content">
+
+    <div class="item food">
+      <span class="item-time">10:00</span>
+      <div class="item-title"><span class="tag tag-food">🍴 餐飲</span> I'm donut? Harajuku</div>
+      <div class="item-desc">原宿店 10 點開門</div>
+      <a class="map-link" href="https://www.google.com/maps/search/I'm+donut+原宿" target="_blank">在 Google Maps 搜尋</a>
+    </div>
+
+    <div class="item food">
+      <span class="item-time">11:30</span>
+      <div class="item-title"><span class="tag tag-food">🍴 餐飲</span> Tas Yard タスヤード</div>
+      <div class="item-desc">11:30 開門</div>
+      <a class="map-link" href="https://www.google.com/maps/search/Tas+Yard+原宿" target="_blank">在 Google Maps 搜尋</a>
+    </div>
+
+    <div class="item note-item">
+      <div class="item-title"><span class="tag tag-note">📌 注意</span> 下午</div>
+      <div class="item-desc">看著辦鬼混</div>
+    </div>
+
+    <div class="item concert">
+      <span class="item-time">18:30</span>
+      <div class="item-title"><span class="tag tag-concert">🎵 演唱會</span> ≪ZENJIN MITO TO IM/MUTABLE〜間奏篇〜≫</div>
+      <div class="item-desc">
+        <span class="warn-red">本趟主要行程</span><br>
+        MUFG 體育場（國立競技場）<br>
+        18:30 開演
+      </div>
+      <a class="map-link" href="https://www.google.com/maps/search/国立競技場" target="_blank">在 Google Maps 搜尋</a>
+    </div>
+
+    <div class="item food evening">
+      <div class="item-title"><span class="tag tag-food">🍴 餐飲</span> Kogane-ya 或 McDonald's 秋葉原昭和通り</div>
+      <div class="item-desc">還有力氣可去上野，沒力氣回秋葉原吃麥</div>
+      <a class="map-link" href="https://maps.app.goo.gl/6FJTn3HjZJ8Z9wyeA" target="_blank">Kogane-ya · 在 Google Maps 搜尋</a>
+      <a class="map-link" href="https://maps.app.goo.gl/KfZGbhCUiW6umdhF6" target="_blank">McDonald's 秋葉原昭和通 · 在 Google Maps 搜尋</a>
+    </div>
+
+    <div class="section-label">當日重點提示</div>
+
+    <div class="item note-item">
+      <span class="item-time">採購備忘</span>
+      <div class="item-title"><span class="tag tag-note">📌 注意</span> 7/5 購物原則 &amp; 行李整理</div>
+      <div class="item-desc">5號阿頭摳只買手掌心大小的品項，避免超重！液體類昨天（7/4）已買完。<br>今晚務必完成行李整理，明日 7/6 退房。</div>
+    </div>
+
+    <div class="item hotel">
+      <span class="item-time">今晚住宿</span>
+      <div class="item-title"><span class="tag tag-hotel">🏨 住宿</span> THE TOURIST HOTEL &amp; Cafe AKIHABARA</div>
+      <div class="item-desc">東京都台東区台東1-6-6<br><strong>明日 7/6 需 Check-out！</strong></div>
+      <a class="map-link" href="https://www.google.com/maps/search/THE+TOURIST+HOTEL+Cafe+AKIHABARA+台東" target="_blank">在 Google Maps 搜尋</a>
+    </div>
+  </div>
+  <div class="page-footer-bar">
+    <span>東京短打旅行 2026</span>
+    <span>DAY 3 · 2026.07.05</span>
+  </div>
+</div>
+
+<!-- ===== DAY 4 (7/6) ===== -->
+<div class="page" id="page-day4">
+  <div class="day-header">
+    <div class="day-header-label">DAY FOUR · 7/6 MON</div>
+    <div><span class="day-header-num">04</span><span class="day-header-title">羽田 → 松山回家</span></div>
+    <div class="day-date-badge">2026.07.06</div>
+  </div>
+  <div class="day-content">
+
+    <div class="item hotel">
+      <span class="item-time">最晚退房時間</span>
+      <div class="item-title"><span class="tag tag-hotel">🏨 住宿</span> Check-out THE TOURIST HOTEL</div>
+      <div class="item-desc">確認最晚退房時間，整理行李準備出發</div>
+    </div>
+
+    <div class="item transport">
+      <span class="item-time">前往機場</span>
+      <div class="item-title"><span class="tag tag-transport">✈ 交通</span> 叫車 → 濱松町</div>
+      <div class="item-desc">
+        叫車到濱松町<br>
+        搭 <strong>東京單軌電車 機場線快速電車</strong><br>
+        濱松町 → 羽田機場 T3（約 18 分）
+      </div>
+      <a class="map-link" href="https://www.google.com/maps/search/浜松町駅+東京モノレール" target="_blank">在 Google Maps 搜尋</a>
+    </div>
+
+    <div class="item transport">
+      <span class="item-time">12:40 – 15:05</span>
+      <div class="item-title"><span class="tag tag-transport">✈ 交通</span> BR191 HND → TSA</div>
+      <div class="item-desc">
+        羽田機場 T3 → 台北松山機場 T1<br>
+        飛行時間約 2 小時 25 分<br>
+        抵達台灣時間 15:05
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="highlight-box">
+      <div class="highlight-jp">ありがとう</div>
+      <div class="highlight-sub">東京 · 2026.07.03 – 07.06 · 老祖宗有保佑 🙏</div>
+    </div>
+
+    <div style="margin-top: 14px; font-size: 13px; color: var(--medium); line-height: 1.9; padding: 0 4px; text-align: center;">
+      4 天 3 夜的東京短打旅程圓滿結束。<br>
+      從秋葉原到池袋，從動物園到吉卡哇，<br>
+      每一刻都是美好的記憶。
+    </div>
+
+    <div class="section-label" style="margin-top:24px;">出發前注意事項</div>
+
+    <div class="item note-item">
+      <div class="item-title"><span class="tag tag-note">📌</span> 購物行李分配</div>
+      <div class="item-desc">
+        <div class="sub-item">7/4 先買完瓶瓶罐罐液體類</div>
+        <div class="sub-item">7/5 阿頭摳只買手掌心大小品項</div>
+        <div class="sub-item">注意托運行李重量限制</div>
+      </div>
+    </div>
+
+    <div class="item note-item">
+      <div class="item-title"><span class="tag tag-note">📌</span> 預約清單確認</div>
+      <div class="item-desc">
+        <div class="sub-item">✅ 上野マルイ POP-UP 18:30（7/3）</div>
+        <div class="sub-item">✅ 房家ホルモン館 19:15（7/3）</div>
+        <div class="sub-item">✅ ちいかわレストラン 20:00 集合（7/4）池袋 PARCO 本館 7F</div>
+        <div class="sub-item">✅ ZENJIN MITO 演唱會 18:30 開演（7/5）國立競技場</div>
+      </div>
+    </div>
+
+    <div class="item note-item">
+      <div class="item-title"><span class="tag tag-note">📌</span> 7 月東京天氣</div>
+      <div class="item-desc">盛夏炎熱，氣溫約 28–35°C，務必備好防曬、補水飲料及薄外套（室內冷氣強）。</div>
+    </div>
+  </div>
+  <div class="page-footer-bar">
+    <span>東京短打旅行 2026</span>
+    <span>DAY 4 · 2026.07.06</span>
+  </div>
+</div>
+
+<script>
+function showPage(day, btn) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('page-' + day).classList.add('active');
+  if (btn) btn.classList.add('active');
+  window.scrollTo(0, 0);
+}
+</script>
+</body>
+</html>
