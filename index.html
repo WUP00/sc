@@ -139,6 +139,49 @@ a { text-decoration: none; color: inherit; }
   line-height: 1.8;
 }
 
+/* ── COUPON BUTTON ── */
+.coupon-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 24px;
+  padding: 13px 18px;
+  background: linear-gradient(135deg, #c0392b 0%, #a93226 100%);
+  border-radius: 10px;
+  text-decoration: none;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  box-shadow: 0 4px 14px rgba(192,57,43,0.35);
+  transition: opacity 0.2s, transform 0.15s;
+  border: 1px solid rgba(255,255,255,0.15);
+}
+.coupon-btn:active {
+  opacity: 0.85;
+  transform: scale(0.98);
+}
+.coupon-btn-icon {
+  font-size: 20px;
+  flex-shrink: 0;
+}
+.coupon-btn-text {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+.coupon-btn-label {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  opacity: 0.8;
+  text-transform: uppercase;
+}
+.coupon-btn-title {
+  font-size: 14px;
+  font-weight: 700;
+}
+
 /* ── OVERVIEW BOX ── */
 .overview-section {
   background: var(--warm-white);
@@ -550,6 +593,15 @@ a { text-decoration: none; color: inherit; }
       <div class="cover-sub">
         包含行程 · 交通 · 餐飲 · 購物<br>及住宿資訊完整版
       </div>
+      <!-- ── 優惠券按鈕 ── -->
+      <a class="coupon-btn" href="https://www.threads.com/@jy23_tw/post/DZ23jeREjlX?xmt=AQG0ENhrHn6lBOvy5Olwt6youkrlmNhFZHyla-gX21wy_hKGsfElMdihfdFzwJ6ZOwnxg5I&slof=1" target="_blank" rel="noopener noreferrer">
+        <div class="coupon-btn-icon">🎟️</div>
+        <div class="coupon-btn-text">
+          <span class="coupon-btn-label">優惠券</span>
+          <span class="coupon-btn-title">點我查看優惠資訊</span>
+        </div>
+        <div style="margin-left:auto; font-size:16px; opacity:0.7;">→</div>
+      </a>
     </div>
 
     <div class="overview-section">
